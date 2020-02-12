@@ -12,6 +12,7 @@ return [
 		'MOBILE'=> 'MOBILE',
 		'AUTO'=> 'AUTO',
 		'EMBEDDED'=> 'EMBEDDED',
+		'' => 'ALL LEADS',
 	],
 
 ];

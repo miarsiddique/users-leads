@@ -43,4 +43,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public $timestamps = false;
+
+    public function leads()
+    {
+        return $this->hasMany(Lead::class, 'user_id', 'id');
+    }
 }

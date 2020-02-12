@@ -7,5 +7,10 @@
 <!-- Custom scripts for all pages-->
 <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
+<script type="text/javascript">
+	setTimeout(function() {
+		$('.alert').delay(5000).slideUp(300);
+	}); 
+</script>
 <!-- custome js for single page -->
 @yield('js')

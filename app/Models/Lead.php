@@ -21,4 +21,11 @@ class Lead extends Model
 	protected $fillable = [
 		'user_id', 'query', 'type', 'status'
 	];
+
+    public $timestamps = false;
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

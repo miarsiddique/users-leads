@@ -3,16 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\LeadService;
 
 class UserLeadsController extends Controller
 {
-    public function __construct()
+	/**
+	 * @var $service
+	 */
+	protected $service;
+
+	/**
+	 * load class instance
+	 * @param LeadService $service
+	 */
+    public function __construct(LeadService $service)
     {
-    	// 
+    	$this->service = $service; 
     }
 
-    public function index()
+    public function index(Request $request)
     {
-    	return view('dashboard.pages.leads'); 
+    	# all leads list where user status active.
+    	$leads = $this->service->getLeads($request->all());
+
+    	# return view.
+    	return view('dashboard.pages.leads', [
+    		'leads' => $leads,
+    	]); 
     }
 }
