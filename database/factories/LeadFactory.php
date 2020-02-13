@@ -18,8 +18,8 @@ $factory->define(Lead::class, function (Faker $faker) {
 		'user_id' => function() {
 			return User::all()->random();
 		},
-		'query' => $faker->text($maxNbChars = 100), 
+		'query' => $faker->text($maxNbChars = 100),
 		'type' => $faker->randomElement(config('leads.lead_type')),
-        'status' => $faker->randomElement(config('leads.status')),		 
+        'status' => $faker->randomElement(config('leads.status')),
     ];
 });
