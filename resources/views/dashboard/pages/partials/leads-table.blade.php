@@ -5,7 +5,6 @@
 				<th>User Name</th>
 				<th>Query</th>
 				<th>Lead Type</th>
-				<th>Lead Status</th>
 				<th>User Status</th>
 			</tr>
 		</thead>
@@ -15,7 +14,6 @@
 				<td>{{$lead->query}}</td>
 				<td>{{$lead->type}}</td>
 				<td>{{$lead->user_status}}</td>
-				<td>{{$lead->lead_status}}</td>
 			</tr>
 			@endforeach
 		</tbody>
