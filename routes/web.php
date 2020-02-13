@@ -11,7 +11,7 @@ Route::post('/login', ['as' => 'authenticate', 'uses' => 'AuthController@authent
 Route::get('/register', ['as' => 'register', 'uses' => 'UserController@register']);
 Route::post('/register', ['as' => 'registered', 'uses' => 'UserController@store']);
 
-Route::group(['prefix' => 'dash-board', ['middleware' => 'user-authenticate', 'cache.headers']], function() {
+Route::group(['prefix' => 'dash-board', 'middleware' => ['user-authenticate', 'cache.headers']], function() {
 
 	Route::get('/', ['as' => 'users-leads', 'uses' => 'UserLeadsController@index']);
 	Route::get('/home', ['as' => 'dashboard', 'uses' => 'DashboardController@board']);
