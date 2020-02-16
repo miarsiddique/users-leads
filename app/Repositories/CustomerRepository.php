@@ -2,24 +2,43 @@
 
 namespace App\Repositories;
 
-
-use App\Models\Lead;
+use App\Models\Customer;
 use Illuminate\Support\Arr;
+use App\Entities\CustomerEntity;
+use App\Repositories\AddressRepository;
 
-class LeadRepository
+class CustomerRepository
 {
 	/**
 	 * @var $model
 	 */
 	protected $model;
+
+	/**
+	 * @var $addressRepository
+	 */
+	protected $addressRepository;
 	
 	/**
 	 * load instance of class
-	 * @param Lead $model 
+	 * @param Customer $model 
 	 */
-	public function __construct(Lead $model)
+	public function __construct(Customer $model, AddressRepository $addressRepository)
 	{
 		$this->model = $model;
+		$this->addressRepository = $addressRepository;
+	}
+
+	/**
+	 * create customer
+	 * @param  CustomerEntity $entity
+	 * @return return customer models
+	 */
+	public function create(CustomerEntity $entity)
+	{
+		$paylaod = $entity->setPayload($entity);
+		$customer = $this->model->create($paylaod);		
+		return $customer;
 	}
 
 	/**

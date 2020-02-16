@@ -29,15 +29,21 @@
 	<li class="nav-item">
 		<a class="nav-link" href="{{route('users-list')}}">
 			<i class="fas fa-fw fa-users"></i>
-			<span>Users</span>
+			<span>USERS</span>
 		</a>
 	</li>
 
 	<!-- Nav Item - Tables -->
 	<li class="nav-item">
-		<a class="nav-link" href="{{route('users-leads')}}">
+		<a class="nav-link" href="{{route('customers-list')}}">
+			<i class="fas fa-fw fa-users"></i>
+			<span>CUSTOMERS</span>
+		</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="{{route('customers-list')}}">
 			<i class="fas fa-fw fa-table"></i>
-			<span>Leads</span>
+			<span>ORDERS</span>
 		</a>
 	</li>
 

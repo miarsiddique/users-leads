@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="form-group">
 	{!! Form::open([
-	        'route' => 'users-leads',
+	        'route' => 'customers-list',
 	        'method' => 'GET',
 	    ]) 
 	!!}

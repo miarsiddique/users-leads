@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.default')
 
 @section('title')
-	Users Leads
+	CUSTOMERS
 @stop
 
 @section('stylesheet')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('page-heading')
- LEADS TABLE
+ CUSTOMERS
 @endsection
 
 @section('content')
@@ -17,11 +17,13 @@
 @include('dashboard.pages.partials.filter-form')
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary">User Leads</h6>
+		<div class="text-right">
+			<a href="{{route('customers-add')}}" class="btn btn-primary">Add Customers</a>
+		</div>
 	</div>
 	<div class="card-body">
 		<!-- table include -->
-		@include('dashboard.pages.partials.leads-table')
+		@include('dashboard.pages.partials.customer-table')
 	</div>
 </div>
 @endsection
